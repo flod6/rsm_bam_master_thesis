@@ -137,7 +137,7 @@ print("Test Loss:", (test_loss_covar))
 
 # Save the model
 torch.save(best_model.state_dict(), output + "/Models/covar_best_FCNN_Regression_abolute.pt")
-
+torch.save(best_model, output + "/Models/covar_best_FCNN_Regression_abolute_full.pt")
 
 # Create evaluation Table
 results_covar, all_preds_val, all_preds_test = make_table(val_loader_covar, test_loader_covar, best_model, device)

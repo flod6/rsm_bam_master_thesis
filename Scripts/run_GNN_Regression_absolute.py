@@ -134,6 +134,7 @@ print("Test Loss:", test_loss_covar)
 
 # Store the best model
 torch.save(best_state, output + "Models/covar_best_graphsage_Regression_absolute.pt")
+torch.save(best_model, output + "/Models/covar_best_graphsage_Regression_abolute_full.pt")
 
 best_model.eval()
 
