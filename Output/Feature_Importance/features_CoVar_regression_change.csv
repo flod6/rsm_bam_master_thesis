@@ -1,0 +1,31 @@
+Feature,Importance,Model
+lag_size,-0.006886334104577024,Linear Regression
+lag_roa,-2.435564019914423,Linear Regression
+lag_leverage,0.0008217133047077052,Linear Regression
+lag_ted_spread,0.1008744652546329,Linear Regression
+lag_gdp_growth,1.7807650646969737,Linear Regression
+lag_market_return,-0.68411042777777,Linear Regression
+lag_vix,-1.2283015334726832,Linear Regression
+lag_t_bill_delta,-0.0231911773211231,Linear Regression
+lag_var,-0.0031777791299627545,Linear Regression
+lag_diff_delta_covar,-0.14590905274989907,Linear Regression
+lag_size,-0.0,Lasso
+lag_roa,0.0,Lasso
+lag_leverage,-0.0,Lasso
+lag_ted_spread,-0.0,Lasso
+lag_gdp_growth,0.0,Lasso
+lag_market_return,-0.0,Lasso
+lag_vix,-0.0,Lasso
+lag_t_bill_delta,0.0,Lasso
+lag_var,-0.0,Lasso
+lag_diff_delta_covar,-0.0,Lasso
+lag_size,0.07386758794864079,Random Forest
+lag_roa,0.021739759594081625,Random Forest
+lag_leverage,0.019940695811319645,Random Forest
+lag_ted_spread,0.15602345593241645,Random Forest
+lag_gdp_growth,0.13017853567894083,Random Forest
+lag_market_return,0.0922735532703268,Random Forest
+lag_vix,0.10260750451878058,Random Forest
+lag_t_bill_delta,0.06353804258305801,Random Forest
+lag_var,0.032895379599911664,Random Forest
+lag_diff_delta_covar,0.30693548506252366,Random Forest

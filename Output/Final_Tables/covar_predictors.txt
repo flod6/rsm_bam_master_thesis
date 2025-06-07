@@ -1,0 +1,39 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Tue, May 27, 2025 - 16:32:40
+% Requires LaTeX packages: dcolumn 
+\begin{table}[!htbp] \centering 
+  \caption{Descriptive Information of the Features} 
+  \label{tab:predictors_descriptives} 
+\small 
+\begin{tabular}{@{\extracolsep{5pt}} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\multicolumn{1}{c}{Size\$\_\{i,t-1\}\$} & 33,036 & 7.473 & 1.517 & 7.205 & 4.007 & 13.227 \\ 
+\multicolumn{1}{c}{ROA\$\_\{i,t-1\}\$} & 33,036 & 0.002 & 0.003 & 0.002 & -0.109 & 0.096 \\ 
+\multicolumn{1}{c}{Leverage\$\_\{i,t-1\}\$} & 33,036 & 10.967 & 5.690 & 10.313 & 1.084 & 296.064 \\ 
+\multicolumn{1}{c}{Interbank Exposure\$\_\{i,t-1\}\$} & 33,036 & 0.011 & 0.025 & 0 & 0 & 0.427 \\ 
+\multicolumn{1}{c}{\$\textbackslash Delta\$-CoVaR\$\_\{i,t-1\}\$} & 33,036 & 0.365 & 0.390 & 0.269 & -0.522 & 2.447 \\ 
+\multicolumn{1}{c}{TED Spread\$\_\{t-1\}\$} & 33,036 & 0.011 & 0.014 & 0.011 & -0.082 & 0.088 \\ 
+\multicolumn{1}{c}{GDP Growth\$\_\{t-1\}\$} & 33,036 & 0.018 & 0.087 & 0.031 & -0.213 & 0.212 \\ 
+\multicolumn{1}{c}{Market Return\$\_\{t-1\}\$} & 33,036 & 20.271 & 7.800 & 18.287 & 10.308 & 58.605 \\ 
+\multicolumn{1}{c}{VIX\$\_\{t-1\}\$} & 33,036 & -0.036 & 0.465 & -0.006 & -1.347 & 1.584 \\ 
+\multicolumn{1}{c}{\$\textbackslash Delta\$ T-Bill\$\_\{t-1\}\$} & 33,036 & -0.002 & 0.174 & -0.004 & -1.423 & 2.284 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Tue, May 27, 2025 - 16:32:40
+% Requires LaTeX packages: dcolumn 
+\begin{table}[!htbp] \centering 
+  \caption{Descriptive Information of the Features} 
+  \label{tab:predictors_descriptives} 
+\small 
+\begin{tabular}{@{\extracolsep{5pt}} D{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\multicolumn{1}{c}{1} & \multicolumn{1}{c}{FALSE} \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
