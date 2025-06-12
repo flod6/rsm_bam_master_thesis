@@ -175,9 +175,9 @@ for i, j in adjacency_matrices.items():
     plt.close() # Close the plot to free up memory
 
 # Save the results as a pickle file 
-#save_path = os.path.join(input, "Clean/covar_graphs_Regression_absolute.pkl")
-#with open(save_path, "wb") as f:
-#    pickle.dump(covar_graphs, f)
+save_path = os.path.join(input, "Clean/covar_graphs_Regression_absolute.pkl")
+with open(save_path, "wb") as f:
+    pickle.dump(covar_graphs, f)
 
 
 

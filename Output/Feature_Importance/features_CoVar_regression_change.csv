@@ -1,14 +1,14 @@
 Feature,Importance,Model
-lag_size,-0.006886334104577024,Linear Regression
-lag_roa,-2.435564019914423,Linear Regression
-lag_leverage,0.0008217133047077052,Linear Regression
-lag_ted_spread,0.1008744652546329,Linear Regression
-lag_gdp_growth,1.7807650646969737,Linear Regression
-lag_market_return,-0.68411042777777,Linear Regression
-lag_vix,-1.2283015334726832,Linear Regression
-lag_t_bill_delta,-0.0231911773211231,Linear Regression
-lag_var,-0.0031777791299627545,Linear Regression
-lag_diff_delta_covar,-0.14590905274989907,Linear Regression
+lag_size,-0.0104714482818817,Linear Regression
+lag_roa,-0.009709908938003515,Linear Regression
+lag_leverage,0.005572667368825219,Linear Regression
+lag_ted_spread,0.03975707141929597,Linear Regression
+lag_gdp_growth,0.012689103488877801,Linear Regression
+lag_market_return,-0.05820099933558392,Linear Regression
+lag_vix,-0.09786992131774899,Linear Regression
+lag_t_bill_delta,-0.00999699840424505,Linear Regression
+lag_var,-0.011813479682645834,Linear Regression
+lag_diff_delta_covar,-0.03642178819728844,Linear Regression
 lag_size,-0.0,Lasso
 lag_roa,0.0,Lasso
 lag_leverage,-0.0,Lasso

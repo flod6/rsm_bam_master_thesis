@@ -1,12 +1,12 @@
 
 % Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-% Date and time: Fri, Jun 06, 2025 - 11:44:31
+% Date and time: Thu, Jun 12, 2025 - 14:58:22
 \begin{tabular}{@{\extracolsep{5pt}} ccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
 Model & Small RMSE & Large RMSE & Small MPE & Large MPE \\ 
 \hline \\[-1.8ex] 
-Linear Regression & 0.3151655 & 0.3847315 &  0.039032033 &  0.00742413 \\ 
+OLS & 0.3151655 & 0.3847315 &  0.039032033 &  0.00742413 \\ 
 Lasso & 0.3315501 & 0.4066664 &  0.008662103 &  0.02486269 \\ 
 Random Forest & 0.3747609 & 0.4459283 & -0.033581570 & -0.08960224 \\ 
 FCNN & 0.4332869 & 0.4878398 &  0.074351627 &  0.07861209 \\ 

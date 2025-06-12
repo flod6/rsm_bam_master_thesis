@@ -1,11 +1,31 @@
-,Lasso,Random Forest
-lag_covar,0.5302685802377524,0.7421582441885645
-lag_gdp_growth,0.0,0.0164181993994776
-lag_leverage,-0.0,0.0053328816359728
-lag_market_return,-0.0021190309973191,0.0295384250497369
-lag_roa,0.0,0.0055282079854903
-lag_size,0.0047280664277012,0.0928847103529399
-lag_t_bill_delta,0.0,0.0211127932028954
-lag_ted_spread,0.0,0.0570883112708654
-lag_var,-0.0,0.0084202138670968
-lag_vix,-0.0190889945926515,0.02151801304696
+Feature,Importance,Model
+lag_size,0.011433969376254044,Linear Regression
+lag_roa,-0.008878105158742544,Linear Regression
+lag_leverage,0.003369505114841579,Linear Regression
+lag_ted_spread,0.03673769959417738,Linear Regression
+lag_gdp_growth,0.0020086448944612867,Linear Regression
+lag_market_return,-0.04489756495748805,Linear Regression
+lag_vix,-0.08382367460464046,Linear Regression
+lag_t_bill_delta,-0.00578265846099019,Linear Regression
+lag_var,-0.01858925475047668,Linear Regression
+lag_covar,0.5626642144216636,Linear Regression
+lag_size,0.004728066427701253,Lasso
+lag_roa,0.0,Lasso
+lag_leverage,-0.0,Lasso
+lag_ted_spread,0.0,Lasso
+lag_gdp_growth,0.0,Lasso
+lag_market_return,-0.0021190309973191817,Lasso
+lag_vix,-0.019088994592651516,Lasso
+lag_t_bill_delta,0.0,Lasso
+lag_var,-0.0,Lasso
+lag_covar,0.5302685802377524,Lasso
+lag_size,0.0928847103529399,Random Forest
+lag_roa,0.005528207985490375,Random Forest
+lag_leverage,0.005332881635972854,Random Forest
+lag_ted_spread,0.057088311270865416,Random Forest
+lag_gdp_growth,0.01641819939947768,Random Forest
+lag_market_return,0.029538425049736944,Random Forest
+lag_vix,0.02151801304696005,Random Forest
+lag_t_bill_delta,0.02111279320289548,Random Forest
+lag_var,0.008420213867096859,Random Forest
+lag_covar,0.7421582441885645,Random Forest

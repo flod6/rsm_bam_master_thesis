@@ -24,6 +24,8 @@ predictions_FCNN_Regression_absolute = pd.read_csv(output + "Predictions_Models/
 covar_final = pd.read_parquet(input + "Clean/covar_final.parquet")
 bank_data_q_clean = pd.read_parquet(input + "Clean/bank_data_q_clean.parquet")
 feature_importance = pd.read_csv(output + "Feature_Importance/features_CoVar_regression_absolute.csv")
+feature_importance_NN = pd.read_csv(output + "Feature_Importance/FCNN_feature_importance.csv")
+feature_importance_GNN = pd.read_csv(output + "Feature_Importance/GNN_feature_importance.csv")
 
 
 #----------------------------------
@@ -60,7 +62,10 @@ ML_test.columns = GNN_test.columns
 
 # Combine the results
 final_results_val = pd.concat([ML_val, FCNN_val, GNN_val], axis=0)
+final_results_val["Model"] = ["OLS", "Lasso", "Random Forest", "FCNN", "GNN"]
+
 final_results_test = pd.concat([ML_test, FCNN_test, GNN_test], axis=0)
+final_results_test["Model"] = ["OLS", "Lasso", "Random Forest", "FCNN", "GNN"]
 
 # Save the results
 final_results_val.to_csv(output + "Result_Models/final_errors_Regression_abolute_val.csv", index=False)
@@ -97,7 +102,10 @@ ML_test.columns = GNN_test.columns
 
 # Combine the results
 final_results_val = pd.concat([ML_val, FCNN_val, GNN_val], axis=0)
+final_results_val["Model"] = ["OLS", "Lasso", "Random Forest", "FCNN", "GNN"]
+
 final_results_test = pd.concat([ML_test, FCNN_test, GNN_test], axis=0)
+final_results_test["Model"] = ["OLS", "Lasso", "Random Forest", "FCNN", "GNN"]
 
 # Save the results
 final_results_val.to_csv(output + "Result_Models/final_errors_Regression_change_val.csv", index=False)
@@ -228,7 +236,7 @@ group.reset_index(drop=True, inplace=True)
 group.columns = ["Non-Crisis RMSE", "Crisis RMSE", "Model", "Non-Crisis MPE", "Crisis MPE"]
 group = group[["Model", "Non-Crisis RMSE", "Crisis RMSE", "Non-Crisis MPE", "Crisis MPE"]]
 
-group["Model"] = ["Linear Regression", "Lasso", "Random Forest", "FCNN", "GNN"]
+group["Model"] = ["OLS", "Lasso", "Random Forest", "FCNN", "GNN"]
 
 # Save the results
 group.to_csv(output + "Result_Models/final_performance_crisis.csv", index=False)
@@ -338,7 +346,7 @@ group.reset_index(drop=True, inplace=True)
 group.columns = ["Small Banks RMSE", "Large Banks RMSE", "Model", "Small Banks MPE", "Large Banks MPE"]
 group = group[["Model", "Small Banks RMSE", "Large Banks RMSE", "Small Banks MPE", "Large Banks MPE"]]
 
-group["Model"] = ["Linear Regression", "Lasso", "Random Forest", "FCNN", "GNN"]
+group["Model"] = ["OLS", "Lasso", "Random Forest", "FCNN", "GNN"]
 
 # Save the results
 group.to_csv(output + "Result_Models/final_performance_size.csv", index=False)
@@ -351,10 +359,22 @@ group.to_csv(output + "Result_Models/final_performance_size.csv", index=False)
 # ----------------------------------
 
 feature_importance = feature_importance.pivot(index='Feature', columns='Model', values='Importance')
-feature_importance = feature_importance.drop(columns=["Linear Regression"])  
+#feature_importance = feature_importance.drop(columns=["Linear Regression"])  
 feature_importance.index.name = None
+feature_importance = pd.merge(feature_importance, feature_importance_NN, 
+                              left_on = feature_importance.index, right_on= "Unnamed: 0", how = "left") 
+feature_importance = feature_importance.rename(columns={"Unnamed: 0": "Feature"})
+feature_importance = feature_importance[["Feature", "Linear Regression", "Lasso", "Random Forest", "0"]]
 
-feature_importance.to_csv(output + "Feature_Importance/features_CoVar_regression_absolute.csv", index=True)
+
+
+
+feature_importance = pd.merge(feature_importance, feature_importance_GNN,
+                              left_on = "Feature", right_on= "Unnamed: 0", how = "left")
+
+feature_importance = feature_importance.drop(columns= ["Unnamed: 0"])
+
+feature_importance.to_csv(output + "Feature_Importance/features_CoVar_regression_absolute_pivot.csv", index=True)
 
 
 

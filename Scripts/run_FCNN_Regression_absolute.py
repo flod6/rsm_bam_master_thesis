@@ -48,7 +48,8 @@ np.random.seed(187)
 #----------------------------------
 
 # Drop not needed columns
-covar_final = covar_final.drop(columns=["diff_delta_covar", "lag_diff_delta_covar"])
+covar_final = covar_final.drop(columns=["diff_delta_covar", "lag_diff_delta_covar" #, "lag_covar"
+                                        ])
 
 # Rename dependent variable
 covar_final = covar_final.rename(columns={"covar": "y"})

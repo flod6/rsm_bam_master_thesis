@@ -99,7 +99,13 @@ metrics_ml = {
 #----------------------------------
 
 # Linear Reg. 
-linreg_model = sk.linear_model.LinearRegression()
+linreg_model = sk.pipeline.Pipeline([
+        ("scaler", sk.preprocessing.StandardScaler()),
+        ("model",  sk.linear_model.LinearRegression())])
+
+# linear_model = sk.linear_model.LinearRegression()
+
+
 
 # Lasso
 lasso_model  = sk.pipeline.Pipeline([
@@ -283,7 +289,7 @@ feature_importances = pd.DataFrame()
 # For Linear Regression (coefficients)
 linreg_features = pd.DataFrame({
     "Feature": x_test.columns,
-    "Importance": best_linreg_model.coef_,
+    "Importance": best_linreg_model.named_steps["model"].coef_,
     "Model": "Linear Regression"
 })
 feature_importances = pd.concat([feature_importances, linreg_features], ignore_index=True)

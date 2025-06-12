@@ -75,8 +75,7 @@ grid_covar = {
     "num_layers":      [2,3,4],
     "dropout":         [0, 0.1, 0.2],
     "lr":              [0.01, 0.001, 0.0001],
-    "weight_decay":    [0],
-    "aggregator_type": ["mean", "lstm"]
+    "weight_decay":    [0]
 }
 
 

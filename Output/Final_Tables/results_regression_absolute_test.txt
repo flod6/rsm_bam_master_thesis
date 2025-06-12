@@ -1,15 +1,15 @@
 
 % Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-% Date and time: Fri, Jun 06, 2025 - 11:44:31
+% Date and time: Thu, Jun 12, 2025 - 14:58:22
 \begin{tabular}{@{\extracolsep{5pt}} ccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
 Model & Test. RMSE & Test. MSE & Test. MAE & Test. MPE \\ 
 \hline \\[-1.8ex] 
-Linear Regression & 0.3188736 & 0.1016804 & 0.1892761 &  0.037505755 \\ 
+OLS & 0.3188736 & 0.1016804 & 0.1892761 &  0.037505755 \\ 
 Lasso & 0.3355639 & 0.1126032 & 0.1943168 &  0.009444394 \\ 
 Random Forest & 0.3785050 & 0.1432661 & 0.2431897 & -0.036286689 \\ 
-NN & 0.4360780 & 0.1901640 & 0.2767461 & -0.074557355 \\ 
+FCNN & 0.4360780 & 0.1901640 & 0.2767461 & -0.074557355 \\ 
 GNN & 0.3717491 & 0.1381974 & 0.2328471 & -0.051864451 \\ 
 \hline \\[-1.8ex] 
 \end{tabular} 

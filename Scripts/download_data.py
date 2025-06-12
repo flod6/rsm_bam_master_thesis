@@ -14,8 +14,8 @@ output = "/Users/floriandahlbender/Documents/Erasmus University Rotterdam/Course
 
 
 # Retrieve credentials from environment variables
-username = os.getenv("WRDS_USERNAME") or "flodahli6"
-password = os.getenv("WRDS_PASSWORD") or "puprac-qicPy1-zumrid"
+username = os.getenv("WRDS_USERNAME") or # Please insert your WRDS username here
+password = os.getenv("WRDS_PASSWORD") or # Please insert your WRDS password here
 
 conn = wrds.Connection(wrds_username=username, wrds_password=password)
 
@@ -100,7 +100,7 @@ conn.close()
 #-------
 
 # Connect with API key
-fred_api_key = os.getenv("FRED_API_KEY") or "7d88dc1214481690a8224f572e2c2171"
+fred_api_key = os.getenv("FRED_API_KEY") or # Please insert your FRED API key here
 fred = fredapi.Fred(api_key=fred_api_key)
 
 # 1. Download TED Spread data from FRED

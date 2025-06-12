@@ -210,19 +210,14 @@ gdp_q_raw["date"] = pd.to_datetime(gdp_q_raw["date"]).dt.to_period("Q").astype(s
 # Ensure the 'date' column is in datetime format
 market_returns_d_clean["date"] = pd.to_datetime(market_returns_d_clean["date"])
 
-# Create a quarterly period column
-market_returns_d_clean["quarter"] = market_returns_d_clean["date"].dt.to_period("Q")
+# Resample the data to quarterly frequency
+market_returns_q_clean = market_returns_d_clean.resample('QE', on='date').sum().reset_index()
 
-# Compound the daily returns within each quarter
-market_returns_q_clean = market_returns_d_clean.groupby("quarter")["vwretd"].apply(
-    lambda x: (1 + x).prod() - 1
-).reset_index()
+# Format the date variable to fit other data frames
+market_returns_q_clean["date"] = pd.to_datetime(market_returns_q_clean["date"]).dt.to_period("Q").astype(str) 
 
-# Rename column
-market_returns_q_clean = market_returns_q_clean.rename(columns={"vwretd": "market_return"})
-
-# Format 'quarter' to string for merging consistency
-market_returns_q_clean["quarter"] = market_returns_q_clean["quarter"].astype(str)
+# Rename the market return variable
+market_returns_q_clean = market_returns_q_clean.rename(columns={market_returns_q_clean.columns[1]: "market_return"})
 
 #-------
 # d. Clean VIX
@@ -276,7 +271,7 @@ macro_variables = pd.merge(
     macro_variables,
     market_returns_q_clean,
     left_on = "date",
-    right_on = "quarter",
+    right_on = "date",
     how="left"
 )
 macro_variables = pd.merge(

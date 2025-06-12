@@ -61,9 +61,9 @@ print(xtable(table,
 
 table <- read.csv(paste0(output, "Result_Models/final_errors_Regression_abolute_val.csv"))
 
-
 colnames(table) <- c("Model", "Val. RMSE", "Val. MSE", "Val. MAE", "Val. MPE")
 rownames(table) <- NULL
+
 table <- as.matrix(table)
 
 # Export the Table
@@ -228,9 +228,9 @@ print(xtable(table,
 # 2. Feature Importance
 #----------------------------------
 
-table <- read.csv(paste0(output, "Feature_Importance/features_CoVar_regression_absolute.csv"))
+table <- read.csv(paste0(output, "Feature_Importance/features_CoVar_regression_absolute_pivot.csv"))
 
-colnames(table) <- c("Features", "Lasso", "Random Forest")
+colnames(table) <- c("weg", "Features", "OLS", "Lasso", "Random Forest", "FCNN", "GNN")
 
 rownames(table) <- c("$\\Delta$-CoVaR$_{i,t-1}$", "GDP Growth$_{t-1}$",
                      "Leverage$_{i,t-1}$", "Market Return$_{t-1}$", 
@@ -238,7 +238,7 @@ rownames(table) <- c("$\\Delta$-CoVaR$_{i,t-1}$", "GDP Growth$_{t-1}$",
                      "TED Spread$_{t-1}$", "VaR$_{i,t-1}$", "VIX$_{t-1}$")
 
 
-table <- table %>% select(-Features)
+table <- table %>% select(-Features, -weg)
 
 #table[, -1] <- lapply(table[, -1], function(x) formatC(x, digits = 5, format = "f"))
 

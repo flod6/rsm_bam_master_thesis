@@ -1,12 +1,12 @@
 
 % Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-% Date and time: Fri, Jun 06, 2025 - 11:44:31
+% Date and time: Thu, Jun 12, 2025 - 14:58:22
 \begin{tabular}{@{\extracolsep{5pt}} ccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
 Model & Non-Crisis RMSE & Crisis RMSE & Non-Crisis MPE & Crisis MPE \\ 
 \hline \\[-1.8ex] 
-Linear Regression & 0.1999414 & 0.6432726 &  0.001087553 & 0.2217217 \\ 
+OLS & 0.1999414 & 0.6432726 &  0.001087553 & 0.2217217 \\ 
 Lasso & 0.2109599 & 0.6760709 & -0.025208432 & 0.1847304 \\ 
 Random Forest & 0.3147693 & 0.6056203 & -0.069045281 & 0.1294176 \\ 
 FCNN & 0.3425004 & 0.7474641 &  0.035455248 & 0.2723494 \\ 
