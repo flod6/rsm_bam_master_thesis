@@ -221,6 +221,9 @@ count_per_quarter = covar_final.groupby("date").size()
 print(count_per_quarter) # Just to check
 
 
+count_per_quarter.mean()
+
+
 # Join on ffsspq and ffsspq to generate the adjected matrix and store in seperate dataframe
 # to generate the interbank exposures
 interbank_vars = pd.merge(covar_final, bank_data_q_clean[["date", "gvkey", "conm", "ffsspq", "ffpssq"]],
