@@ -1,15 +1,15 @@
 
 % Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-% Date and time: Fri, Jun 13, 2025 - 17:42:29
-\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+% Date and time: Sat, Jun 14, 2025 - 17:44:33
+\begin{tabular}{@{\extracolsep{5pt}} cccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
-Model & Val. RMSE & Val. MSE & Val. MAE & Val. MPE \\ 
+Model & Val. RMSE & Val. MAE & Val. MPE \\ 
 \hline \\[-1.8ex] 
-OLS & 0.1437468 & 0.02066315 & 0.11673295 &  0.67935287 \\ 
-Lasso & 0.1263819 & 0.01597240 & 0.08341989 & -0.79455281 \\ 
-Random Forest & 0.1072842 & 0.01150990 & 0.07761954 & -0.03337041 \\ 
-FCNN & 0.1063262 & 0.01130526 & 0.07372265 &  1.20504020 \\ 
-GNN & 0.1199687 & 0.01439248 & 0.08227900 &  0.93232741 \\ 
+OLS & 0.1437468 & 0.11673295 &  0.67935287 \\ 
+Lasso & 0.1263819 & 0.08341989 & -0.79455281 \\ 
+Random Forest & 0.1072842 & 0.07761954 & -0.03337041 \\ 
+FCNN & 0.1063262 & 0.07372265 &  1.20504020 \\ 
+GNN & 0.1199687 & 0.08227900 &  0.93232741 \\ 
 \hline \\[-1.8ex] 
 \end{tabular} 

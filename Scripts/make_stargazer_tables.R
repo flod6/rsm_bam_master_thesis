@@ -19,7 +19,7 @@ output  <-  "/Users/floriandahlbender/Documents/Erasmus University Rotterdam/Cou
 #----------------------------------
 
 #----------------------------------
-# 1. Create Covar Descriptives
+# 1. Create Predictor Descriptives
 #----------------------------------
 
 table <- read.csv(paste0(output, "Descriptives/covar_predictors.csv"))
@@ -41,6 +41,8 @@ table[, -1] <- lapply(table[, -1], function(x) formatC(x, digits = 5, format = "
 
 table$N <- formatC(table$N, digits = 0, format = "f", big.mark = ",")
 
+table <- table[-1, ]
+
 
 print(xtable(table,
              caption = "",#"Descriptive Information of the Features",
@@ -56,6 +58,46 @@ print(xtable(table,
 
 
 #----------------------------------
+# 1.1 Create Covar Descriptives
+#----------------------------------
+
+table <- read.csv(paste0(output, "Descriptives/covar_predictors.csv"))
+
+table <- table %>%
+  select(-X, -X25., -X75.) %>%
+  select(count, mean, std, X50., min, max)
+
+colnames(table) <- c("N", "Mean", "SD", "Median", "Min", "Max")
+
+rownames(table) <- c("$\\Delta$-CoVaR$_{i,t}$", "Size$_{i,t-1}$", "ROA$_{i,t-1}$", "Leverage$_{i,t-1}$", 
+                     "VaR$_{i,t-1}$", "$\\Delta$-CoVaR$_{i,t-1}$",
+                     "TED Spread$_{t-1}$", "GDP Growth$_{t-1}$", "Market Return$_{t-1}$",
+                     "VIX$_{t-1}$", "$\\Delta$ T-Bill$_{t-1}$")
+
+
+table[, -1] <- lapply(table[, -1], function(x) formatC(x, digits = 5, format = "f"))
+
+
+table$N <- formatC(table$N, digits = 0, format = "f", big.mark = ",")
+
+table <- table[1, ]
+
+
+print(xtable(table,
+             caption = "",#"Descriptive Information of the Features",
+             label = "",#"tab:predictors_descriptives",
+             align = c("l", rep("r", ncol(table)))),
+      include.rownames = TRUE,
+      sanitize.rownames.function = identity,
+      caption.placement = "top",
+      comment = FALSE,
+      floating = FALSE,
+      file = paste0(output, "Final_Tables/covar_descriptives.tex"))
+
+
+
+
+#----------------------------------
 # 1. Results Regression Absolute
 #----------------------------------
 
@@ -63,6 +105,8 @@ table <- read.csv(paste0(output, "Result_Models/final_errors_Regression_abolute_
 
 colnames(table) <- c("Model", "Val. RMSE", "Val. MSE", "Val. MAE", "Val. MPE")
 rownames(table) <- NULL
+
+table <- table %>% select(-"Val. MSE")
 
 table <- as.matrix(table)
 
@@ -82,8 +126,11 @@ close(t2)
 table <- read.csv(paste0(output, "Result_Models/final_errors_Regression_abolute_test.csv"))
 
 
-colnames(table) <- c("Model", "Test. RMSE", "Test. MSE", "Test. MAE", "Test. MPE")
+colnames(table) <- c("Model", "Test RMSE", "Test MSE", "Test MAE", "Test MPE")
 rownames(table) <- NULL
+
+table <- table %>% select(-"Test MSE")
+
 table <- as.matrix(table)
 
 # Export the Table
@@ -109,6 +156,7 @@ table <- read.csv(paste0(output, "Result_Models/final_errors_Regression_change_v
 
 colnames(table) <- c("Model", "Val. RMSE", "Val. MSE", "Val. MAE", "Val. MPE")
 rownames(table) <- NULL
+table <- table %>% select(-"Val. MSE")
 table <- as.matrix(table)
 
 # Export the Table
@@ -127,8 +175,9 @@ close(t2)
 table <- read.csv(paste0(output, "Result_Models/final_errors_Regression_change_test.csv"))
 
 
-colnames(table) <- c("Model", "Test. RMSE", "Test. MSE", "Test. MAE", "Test. MPE")
+colnames(table) <- c("Model", "Test RMSE", "Test MSE", "Test MAE", "Test MPE")
 rownames(table) <- NULL
+table <- table %>% select(-"Test MSE")
 table <- as.matrix(table)
 
 # Export the Table
